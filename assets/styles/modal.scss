@@ -1,0 +1,50 @@
+.modal {
+    display: block;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    margin: 15% auto;
+    padding: 20px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: -15px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 55px;
+}
+.msg_ok{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    background: green;
+}
+.msg_ok p{
+    font-size: 1.1rem;
+    color: white;
+    padding: 1rem;
+}
+.msg_pasok{
+    display: flex;
+    justify-content: center;
+    margin: 2rem;
+    background: red;
+}
+.msg_pasok p{
+    font-size: 1.1rem;
+    color: white;
+    padding: 1rem;
+}

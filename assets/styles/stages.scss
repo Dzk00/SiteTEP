@@ -1,0 +1,203 @@
+@import '_all.scss';
+
+.stages-nav{
+    width: 100%;
+}
+.stages-nav ul{
+    display: flex;
+    justify-content: space-between;
+}
+.stages-nav ul li{
+    width: 100%;
+    height: 3.5rem;
+    text-align: center;
+}
+.stages-nav ul li a{
+    line-height: 3.5rem;
+    color: $color-primary-2;
+    font-size: 1.1rem;
+    letter-spacing: .1px;
+}
+.stages-nav-mobile{
+    width: 100%;
+}
+.stages-nav-mobile ul{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.stages-nav-mobile ul li{
+    width: 100%;
+    height: 2rem;
+    text-align: center;
+}
+.stages-nav-mobile ul li a{
+    line-height: 2rem;
+    color: $color-primary-2;
+    font-size: .9rem;
+    letter-spacing: .1px;
+}
+
+@media screen and (max-width: 950px){
+    .stages-nav ul li a{
+        font-size: .9rem;
+    }
+}
+@media screen and (max-width: 850px){
+    .stages-nav ul{
+        flex-direction: column;
+    }
+}
+.stages-container{
+    background: $bg-nav-mobile;
+    color: $white;
+    padding-bottom: 3rem;
+    letter-spacing: .1px;
+}
+.stages-container-title{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.stages-container span{
+    color: $color-primary-2;
+}
+.stages-container h2, .center{
+    text-align: justify;
+    color: $color-primary-2;
+}
+.stages-container h2{
+    font-weight: 600;
+    font-size: 1.7rem;
+    padding: 3rem 3rem 0 3rem;
+}
+@media screen and (max-width: 365px){
+    .stages-container h2{
+        font-size: 1.4rem;
+    }
+}
+.center{
+    font-weight: 300;
+    font-size: 1.2rem;
+    padding: 0 3rem 3rem 3rem;
+}
+.stages-infos{
+    display: flex;
+    justify-content: space-evenly;
+}
+@media screen and (max-width: 850px){
+    .stages-infos{
+        flex-direction: column-reverse;
+    }
+}
+.stages-infos-left{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 2rem;
+    width: 60%;
+}
+@media screen and (max-width: 850px){
+    .stages-infos-left{
+        width: auto;
+    }
+}
+.stages-infos-left h3, .stages-infos-right h3{
+    color: $color-primary-2;
+    font-size: 1.6rem;
+    font-weight: 600;
+    width: 60%;
+    text-align: justify;
+}
+.stages-infos-right h3{
+    width: auto;
+    text-align: justify;
+}
+.stages-infos-left h4{
+    color: $color-primary-1;
+    font-weight: 600;
+    font-size: 1.3rem;
+    text-align: justify;
+}
+.stages-infos-left p, .stages-infos-right p{
+    font-size: .9rem;
+    font-weight: 300;
+    text-align: justify;
+}
+.stages-infos-left-prix-1, .stages-infos-left-prix-2{
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+.stages-infos-left-prix-bar{
+    width: 50%;
+    height: 1px;
+    background: $color-primary-2;
+}
+@media screen and (max-width: 850px){
+    .stages-infos-left-prix-bar{
+        width: auto;
+    }
+}
+.stages-infos-right{
+    background: $bg;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 15px;
+    padding: 4rem;
+}
+
+@media screen and (max-width: 850px){
+    .stages-infos-right{
+        background: $bg-nav-mobile;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 1rem 2rem 0 2rem;
+        gap: 25px;
+    }
+}
+.stages-paiement{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 3rem;
+    letter-spacing: .1px;
+}
+.stages-paiement h3{
+    font-size: 1.7rem;
+    color: $color-primary-2;
+    margin-bottom: .5rem;
+    text-align: justify;
+}
+.stages-paiement p{
+    color: $white;
+    font-weight: 300;
+    font-size: 1.1rem;
+    text-align: justify;
+}
+.stages-paiement h4{
+    margin-top: .5rem;
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+    color: $color-primary-1;
+    text-align: justify;
+}
+.stages-paiement span{
+    color: $color-primary-2;
+}
+.stages-paiement button{
+    height: 2rem;
+    width: 15rem;
+    border-radius: 50px;
+    background: none;
+    border: 1px solid $color-primary-2;
+    color: $color-primary-2;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.stages-paiement button:hover{
+    background: $color-primary-2;
+    color: $bg-nav-mobile;
+    transform: scale(1.1);
+}

@@ -1,0 +1,340 @@
+@import '_all.scss';
+
+
+.home-container{
+    background-image: $background-image-url;
+    width: 100%; 
+    height: 100vh;
+    background-size: cover;
+}
+.home-content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 10rem;
+}
+.home-content h1, .home-content h2{
+    color: $white;
+}
+.home-content h1{
+    margin-top: 220px;
+    font-size: 3.5rem;
+    font-weight: 800;
+}
+.home-content h2{
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+.home-content-btn{
+    margin-top: 3rem;
+    display: flex;
+    gap: 25px;
+}
+.home-content-btn button{
+    height: 3rem;
+    width: 16rem;
+    border: 1px solid $color-primary-2;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: $color-primary-2;
+    color: $white;
+    text-transform: uppercase;
+    transition: 0.5s all;
+}
+.home-content-btn button:nth-child(2){
+    background: $color-primary-1;
+    border: 1px solid $color-primary-1;
+
+}
+// .home-content-btn button:nth-child(2){
+//     border: 0.5px solid $color-primary-2;
+//     background: $color-primary-2;
+//     -webkit-box-shadow: 0px 0px 5px -4px $color-primary-2; 
+//     box-shadow: 0px 0px 10px -4px $color-primary-2;
+// }
+.home-content-btn button:hover{
+    transform: scale(1.1);
+    background: $color-primary-1;
+    border: 1px solid $color-primary-1;
+    color: $bg;
+}
+.home-content-btn button:nth-child(2):hover{
+    border: 1px solid $color-primary-2;
+    background: $color-primary-2;
+}
+@media only screen and (max-width:1600px){
+    .home-content{
+        margin-left: calc(1px + 3vw);
+    }
+}
+@media only screen and (max-width:600px){
+    .home-content{
+        align-items: center;
+        margin: 0 3rem;
+        text-align: justify;
+    }
+    .home-content-btn{
+        flex-direction: column;
+    }
+    .home-content h1{
+        font-size: 2.2rem;
+    }
+    .home-content h2{
+        font-size: 1.2rem;
+    }
+    .home-content-btn button{
+        transform: scale(0.8);
+    }
+    .home-content-btn button:hover{
+        transform: scale(0.9);
+    }
+}
+
+
+.home-anniversary-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $white;
+    gap: 50px;
+    position: relative;
+    z-index: -11;
+    margin-bottom: 5rem;
+    background: $bg-nav-mobile;
+    padding: 7rem 0;
+}
+
+.home-anniversary-container i{
+    font-size: 10rem;
+    color: $color-primary-2;
+    margin-top: 0.1rem;
+}
+.home-anniversary-container h2{
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    margin: 0 2rem;
+    text-align: justify;
+}
+.home-anniversary-container h2 span, .home-anniversary-container p::first-letter{
+    color: $color-primary-2;
+}
+.home-anniversary-container p{
+    text-align: justify;
+    margin: 0 10rem;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: -10;
+}
+@media screen and (max-width: 800px) {
+    .home-anniversary-container p{
+        margin: 0 2.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+.home-anniversary-container p::after{
+    content: "";
+    position: absolute;
+    bottom: -50px;
+    right: 0;
+    background-color: $color-primary-2;
+    width: 60px;
+    height: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 0;
+}
+
+.home-ecole{
+    display: flex;
+    flex-direction: column;
+    gap: 6rem;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 6rem;
+}
+
+.home-ecole-content{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.home-ecole-content h2{
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: -10;
+    text-align: justify;
+    margin-bottom: 5px;
+    color: $white
+}
+.home-ecole-content h2 span, .home-ecole-content p::first-letter{
+    color: $color-primary-2;
+}
+.home-ecole-content h2::after{
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+    width: 70px;
+    height: 3px;
+    background: $color-primary-2;
+    border-radius: 50px;
+}
+.home-ecole-content p{
+    font-size: 1.05rem;
+    text-align: justify;
+    color: $white
+}
+.home-ecole-content button{
+    height: 3rem;
+    width: 14rem;
+    border: 1px solid $color-primary-2;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 600;
+    background: transparent;
+    color: $color-primary-2;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    padding: 0 1rem;
+    z-index: 0;
+}
+.home-ecole-content button:hover{
+    background: $color-primary-2;
+    color: $bg;
+}
+.home-ecole-content button i{
+    margin-left: 0.3rem;
+    transition: all 0.5s;
+}
+.home-ecole-content button:hover i{
+    margin-left: 1.5rem;
+}
+.home-ecole-video iframe{
+    width: 80vw;
+}
+@media screen and (max-width: 1600px) {
+    .home-ecole-content h2{
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 1500px) {
+    .home-ecole-content h2{
+        margin-bottom: 0px;
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 1380px) {
+    .home-ecole {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+    .home-ecole-content button{
+        margin-left: 0;
+    }
+}
+@media screen and (max-width: 950px) {
+    .home-ecole-video iframe{
+        width: 97vw;
+        height: 20rem;
+    }
+}
+@media screen and (max-width: 800px) {
+    .home-ecole-img img {
+        width: 85vw;
+        height: auto;
+    }
+    .home-ecole{
+        margin: 6rem 2rem;
+    }
+}
+
+.home-services-global{
+    color: $white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+.home-services-global h2{
+    text-align: justify;
+    font-size: 2.5rem;
+    margin: 0 2rem 3rem 2rem;
+}
+.home-services-global h2 span{
+    color: $color-primary-2;
+}
+.home-services-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+}
+.home-service-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: auto;
+    gap: 10px;
+    border: 1px solid $color-primary-2;
+    box-shadow: rgba(255, 255, 255, 0.163) 0px 6px 24px 0px, rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+    border-radius: 20px;
+    padding: 3rem;
+    margin: 0 1rem;
+
+}
+.home-service-card i, .home-service-card h3, .home-service-card button{
+    align-self: center;
+}
+.home-service-card i{
+    font-size: 3rem;
+    color: $color-primary-2;
+}
+.home-service-card h3{
+    font-size: 1.6rem;
+    color: $color-primary-2;
+}
+.home-service-card p{
+    font-size: 1.05rem;
+    margin-top: 1rem;
+    flex: 1;
+}
+.home-service-card p::first-letter{
+    color: $color-primary-2;
+}
+.home-service-card button{
+    height: 4rem;
+    width: 10rem;
+    border: 0.5px solid $color-primary-1;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: $color-primary-1;
+    color: $white;
+    -webkit-box-shadow: 0px 0px 5px -4px $color-primary-1; 
+    box-shadow: 0px 0px 10px -4px $color-primary-1;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+    justify-self: flex-end;
+    margin-top: 2rem;
+}
+.home-service-card button:hover{
+    transform: scale(1.1);
+}
+

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous en Piste{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/ecole_baby.jpg')}}" alt="">
+</div>
+
+{{ include('components/_coursnav.html.twig') }}
+
+<div class="cours-container">
+    <h1>Cours à l'année - <span>Minis</span></h1>
+    <div class="cours-infos">
+
+        <div class="cours-infos-left">
+            <h2>Infos pratiques</h2>
+            <p>Les cours ont lieu chaque mercredi et durent 1h.</p>
+            <div class="cours-infos-left-time">
+                <div class="cours-infos-left-time-1">
+                    <p>16h30</p>
+                    <p>Début du cours</p>
+                </div>
+                <div class="cours-infos-left-time-bar"></div>
+                <div class="cours-infos-left-time-2">
+                    <p>17h30</p>
+                    <p>Fin du cours</p>
+                </div>
+            </div>
+            <p>Les inscriptions sont ouvertes à partir du <span>JJ/MM/AAAA</span>.</p>
+            <p>Infos inscription à remplir (corinne) afin de déterminer si le premier cours est offert, si il faut s'inscrire avant le cours, quand et comment donner le paiement.</p>
+            <p>Prix à l'année : <span>300€</span></p>
+        </div>
+
+        <div class="cours-infos-right">
+            <h2>Inscriptions</h2>
+            <p>L'inscription sera définitive à compter de la reception du formulaire ci-joint sur le site via notre page Inscriptions ou le bouton ci-dessous et du règlement de la cotisation annuelle par chèque ou virement.</p>
+            <button><i class="fa-solid fa-circle-chevron-down"></i>Formulaire d'inscription</button>
+        </div>
+    </div>
+</div>
+
+<div class="cours-content-container">
+    <div class="cours-content-text">
+        <h2>Pour les enfants de 4 à 6 ans</h2>
+        <p>Les cours de cirque Minis développent la motricité et la coordination chez l'enfant et leur permet de s'éveiller aux Arts du Cirque dans un univers ludique. La pratique du cirque n'encourage pas l'esprit de compétition mais la créativité et l'entraide, et permet aux enfants de s'épanouir tout en s'amusant.</p>
+        <h2>Tenue à prévoir</h2>
+        <p>Chaussons souples de gym ou danse, vêtements de sport ou justaucorps (sans boutons ni fermetures).</p>
+    </div>
+    <div class="cours-content-img">
+        <img src="{{ asset('images/cirque/cours_minis_1.jpg')}}" alt="">
+        <img src="{{ asset('images/cirque/cours_minis_2.jpg')}}" alt="">
+    </div>
+</div>
+
+
+{% endblock %}

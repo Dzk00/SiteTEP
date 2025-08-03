@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous en Piste{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/cours_enfants.jpg')}}" alt="">
+</div>
+
+{{ include('components/_coursnav.html.twig') }}
+
+<div class="cours-container">
+    <h1>Cours à l'année - <span>Junior</span></h1>
+    <div class="cours-infos">
+
+        <div class="cours-infos-left">
+            <h2>Infos pratiques</h2>
+            <p>Les cours ont lieu chaque mercredi et durent 1h.</p>
+            <div class="cours-infos-left-time">
+                <div class="cours-infos-left-time-1">
+                    <p>17h30</p>
+                    <p>Début du cours</p>
+                </div>
+                <div class="cours-infos-left-time-bar"></div>
+                <div class="cours-infos-left-time-2">
+                    <p>18h30</p>
+                    <p>Fin du cours</p>
+                </div>
+            </div>
+            <p>Les inscriptions sont ouvertes à partir du <span>JJ/MM/AAAA</span>.</p>
+            <p>Infos inscription à remplir (corinne) afin de déterminer si le premier cours est offert, si il faut s'inscrire avant le cours, quand et comment donner le paiement.</p>
+            <p>Prix à l'année : <span>300€</span></p>
+        </div>
+
+        <div class="cours-infos-right">
+            <h2>Inscriptions</h2>
+            <p>L'inscription sera définitive à compter de la reception du formulaire ci-joint sur le site via notre page Inscriptions ou le bouton ci-dessous et du règlement de la cotisation annuelle par chèque ou virement.</p>
+            <button><i class="fa-solid fa-circle-chevron-down"></i>Formulaire d'inscription</button>
+        </div>
+    </div>
+</div>
+
+<div class="cours-content-container">
+    <div class="cours-content-text">
+        <h2>Pour les enfants de 7 à 8 ans</h2>
+        <p>Le cirque permet aux enfants d’acquérir et de développer des valeurs nécessaires à leur épanouissement. Tout en travaillant le corps et la mobilité, ils apprennent la confiance en soi, la confiance en l’autre et entretiennent une certaine bienveillance les uns par rapport aux autres. Les enfants travaillent leur coordination, leur souplesse, l’équilibre. Ils apprennent à mieux connaître leur corps, travaillent leur potentiel de concentration et développent leur persévérance.</p>
+        <h2>Tenue à prévoir</h2>
+        <p>Chaussons souples de gym ou danse, vêtements de sport ou justaucorps (sans boutons ni fermetures).</p>
+    </div>
+    <div class="cours-content-img">
+        <img src="{{ asset('images/cirque/cours_junior_1.jpg')}}" alt="">
+        <img src="{{ asset('images/cirque/cours_junior_2.jpg')}}" alt="">
+    </div>
+</div>
+
+{% endblock %}

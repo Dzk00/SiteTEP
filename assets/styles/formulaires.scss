@@ -1,0 +1,300 @@
+@import '_all.scss';
+
+// COURS ANNUELS
+
+.form-title, .form-infos-imp{
+    text-align: center;
+    margin: 3rem;
+    color: $color-primary-2;
+    letter-spacing: 0.1px;
+}
+.form-title h1, .form-infos-imp h3{
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.form-title p, .form-infos-imp h4{
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+.form-infos{
+    display: flex;
+    gap: 55px;
+    justify-content: center;
+    color: $white;
+    letter-spacing: .1px;
+    font-size: 1.1rem;
+    font-weight: 300;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-infos span{
+    color: $color-primary-2;
+}
+.form-infos-left, .form-infos-right{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    text-align: justify;
+}
+.form-infos-left p{
+    width: 40vw;
+}
+.form-infos-right{
+    background: $bg-nav-mobile;
+    padding: 3rem;
+}
+.form-infos-right button{
+    width: 12rem;
+    height: 2rem;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid $color-primary-2;
+    color: $color-primary-2;
+    align-self: center;
+    margin-top: 2rem;
+}
+.form-infos-right button:hover{
+    color: $bg-nav-mobile;
+    background: $color-primary-2
+}
+@media screen and (max-width: 730px) {
+    .form-infos{
+        flex-direction: column;
+    }
+    .form-infos-left{
+        margin: 0 3rem;
+    }
+    .form-infos-left p{
+        width: auto;
+    }
+}
+
+.form-container{
+    color: $white;
+    font-size: 0.9rem;
+    background: $bg-nav-mobile;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.form-container p, .form-container span{
+    color: $color-primary-2;
+}
+.form-container p{
+    align-self: flex-start;
+}
+.row-line{
+    display: flex;
+    gap: 15px;
+}
+.row{
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    width: 45vw;
+    align-items: center;
+    text-align: justify;
+}
+.row-alone{
+    width: calc(90vw + 15px);
+}
+.row-alone label{
+    width: 72rem;
+}
+.form-container label{
+    line-height: 2rem;
+    height: 2rem;
+}
+.form-container input[type=text]{
+    width: 25rem;
+    height: 2rem;
+    background: none;
+    border: none;
+    border-bottom: 1px solid $white-text;
+    font-size: 0.9rem;
+    line-height: 0.9rem;
+    text-align: end;
+    color: $white;
+}
+.row-select select{
+    width: 35rem;
+    height: 10rem;
+    text-align: start;
+    color: $white;
+}
+.row-select-2 select{
+    width: 35rem;
+    height: 5rem;
+    text-align: start;
+    color: $white;
+}
+@media screen and (max-width: 650px) {
+    .row-select select{
+        width: 85vw;
+    }
+}
+.form-container input[type=text]:focus{
+    outline:  none;
+}
+.row-alone input[type=text]{
+    width: calc(70rem + 18px);
+}
+.form-container input[type=checkbox]{
+    height: 17px;
+    width: 17px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    background: $black;
+    border: 1px solid $white-header;
+    cursor: pointer;
+}
+.form-container input[type=checkbox]:hover{
+    background: $white-header;
+}
+.form-container input[type=checkbox]:checked{
+    background: $color-primary-2;
+    margin:0px;
+    position: relative;
+    border: 1px solid $color-primary-2;
+}
+.row-btn button{
+    width: 30rem;
+    height: 2rem;
+    background: none;
+    border: 1px solid $color-primary-2;
+    border-radius: 50px;
+    color: $color-primary-2;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+.row-btn button:hover{
+    transform: scale(1.1);
+    background: $color-primary-2;
+    color: $bg-nav-mobile;
+}
+#inscription_annuelle_date_naissance_ad{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.form-container select{
+    font-size: .9rem;
+    border: none;
+    border-bottom: 1px solid $white-header;
+    padding: 5px;
+    border-radius: 4px;
+    background: none;
+    color: $white;
+}
+.form-container select:focus{
+    color: $color-primary-2;
+}
+.form-container select:focus option{
+    color: $white;
+    background: $bg-nav-mobile;
+}
+
+@media screen and (max-width: 1000px) {
+    .row-line{
+        flex-direction: column;
+    }
+    .row{
+        width: 90vw;
+    }
+    .row-alone input[type=text]{
+        width: 41.5rem;
+    }
+    .row-alone label{
+        width: 80vw;
+        height: fit-content;
+    }
+}
+@media screen and (max-width: 800px) {
+    .form-container{
+        padding: 2rem;
+        align-items: flex-start;
+    }
+    .row{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .row-btn{
+        align-self: center;
+    }
+    .row-alone input[type=text]{
+        width: 85vw;
+    }
+    .row input[type=text]{
+        width: 85vw;
+    }
+    .row-alone label{
+        width: 80vw;
+    }
+}
+@media screen and (max-width: 530px) {
+    .form-container{
+        padding: 1rem;
+        align-items: flex-start;
+    }
+    .row-btn button{
+        width: 80vw;
+    }
+}
+
+.form-recap{
+    margin: 3rem;
+}
+.form-recap h2{
+    text-align: center;
+    color: $color-primary-2;
+    font-size: 1.6rem;
+    letter-spacing: .1px;
+    font-weight: 600;
+}
+.form-recap-info{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: $bg-nav-mobile;
+}
+.form-recap-info .col{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: $white;
+    text-align: justify;
+}
+.form-recap-info .col h3{
+    font-weight: 400;
+    color: $color-primary-2;
+}
+.form-recap-info .col p{
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+.form-recap-info .col p span{
+    color: $color-primary-2;
+}
+.txt-margin{
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 600px){
+    .form-recap-info{
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
+
+#inscription_anuelle_cours_ad{
+    width: 80vw;
+}

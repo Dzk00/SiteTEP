@@ -1,0 +1,25 @@
+<div class="stages-nav">
+    <ul> 
+        {% if app.request.attributes.get('_route') == 'app_stages_monaco' %}   
+        <li class="active"><a href="{{ path('app_stages_monaco')}}">Stages Monaco 2024</a></li>
+        <li><a href="{{ path('app_stages_toussaint')}}">Vacances de la Toussaint</a></li>
+        <li><a href="{{ path('app_stages_fevrier')}}">Vacances de Février</a></li>
+        <li><a href="{{ path('app_stages_paques')}}">Vacances de Pâques</a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_stages_toussaint' %}
+        <li><a href="{{ path('app_stages_monaco')}}">Stages Monaco 2024</a></li>
+        <li class="active"><a href="{{ path('app_stages_toussaint')}}">Vacances de la Toussaint</a></li>
+        <li><a href="{{ path('app_stages_fevrier')}}">Vacances de Février</a></li>
+        <li><a href="{{ path('app_stages_paques')}}">Vacances de Pâques</a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_stages_fevrier' %}
+        <li><a href="{{ path('app_stages_monaco')}}">Stages Monaco 2024</a></li>
+        <li><a href="{{ path('app_stages_toussaint')}}">Vacances de la Toussaint</a></li>
+        <li class="active"><a href="{{ path('app_stages_fevrier')}}">Vacances de Février</a></li>
+        <li><a href="{{ path('app_stages_paques')}}">Vacances de Pâques</a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_stages_paques' %}
+        <li><a href="{{ path('app_stages_monaco')}}">Stages Monaco 2024</a></li>
+        <li><a href="{{ path('app_stages_toussaint')}}">Vacances de la Toussaint</a></li>
+        <li><a href="{{ path('app_stages_fevrier')}}">Vacances de Février</a></li>
+        <li class="active"><a href="{{ path('app_stages_paques')}}">Vacances de Pâques</a></li>
+        {% endif %}
+    </ul>
+</div>

@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous en Piste{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/cours_kids.jpg')}}" alt="">
+</div>
+
+{{ include('components/_coursnav.html.twig') }}
+
+<div class="cours-container">
+    <h1>Cours à l'année - <span>Kids</span></h1>
+    <div class="cours-infos">
+
+        <div class="cours-infos-left">
+            <h2>Infos pratiques</h2>
+            <p>Les cours ont lieu chaque mardi et durent 1h30.</p>
+            <div class="cours-infos-left-time">
+                <div class="cours-infos-left-time-1">
+                    <p>17h45</p>
+                    <p>Début du cours</p>
+                </div>
+                <div class="cours-infos-left-time-bar"></div>
+                <div class="cours-infos-left-time-2">
+                    <p>19h15</p>
+                    <p>Fin du cours</p>
+                </div>
+            </div>
+            <p>Les inscriptions sont ouvertes à partir du <span>JJ/MM/AAAA</span>.</p>
+            <p>Infos inscription à remplir (corinne) afin de déterminer si le premier cours est offert, si il faut s'inscrire avant le cours, quand et comment donner le paiement.</p>
+            <p>Prix à l'année : <span>340€</span></p>
+        </div>
+
+        <div class="cours-infos-right">
+            <h2>Inscriptions</h2>
+            <p>L'inscription sera définitive à compter de la reception du formulaire ci-joint sur le site via notre page Inscriptions ou le bouton ci-dessous et du règlement de la cotisation annuelle par chèque ou virement.</p>
+            <button><i class="fa-solid fa-circle-chevron-down"></i>Formulaire d'inscription</button>
+        </div>
+    </div>
+</div>
+
+<div class="cours-content-container">
+    <div class="cours-content-text">
+        <h2>Pour les enfants de 9 à 10 ans</h2>
+        <p>Les enfants développeront coordination et motricité, aiguiseront leur sens esthétique et bénéficieront d’une ambiance conviviale en alternant entre activités et jeux autour de diverses disciplines circassiennes (jonglage, acrobaties, équilibres…). L’objectif des cours de cirque est également de travailler en groupe, ce qui encourage à socialiser et à prendre conscience de leur place au sein du groupe.</p>
+        <h2>Tenue à prévoir</h2>
+        <p>Chaussons souples de gym ou danse, vêtements de sport ou justaucorps (sans boutons ni fermetures).</p>
+    </div>
+    <div class="cours-content-img">
+        <img src="{{ asset('images/cirque/cours_kids_1.jpg')}}" alt="">
+        <img src="{{ asset('images/cirque/cours_kids_2.jpg')}}" alt="">
+    </div>
+</div>
+
+{% endblock %}

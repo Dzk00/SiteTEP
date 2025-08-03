@@ -1,0 +1,78 @@
+@import '_all.scss';
+
+.sidemenu{
+    position: fixed;
+    top: -50px;
+    left: -100vw;
+    width: 100vw;
+    height: 110vh;
+    transition: left 0.5s ease;
+    z-index: 10;
+    background-color: $color-primary-1;
+}
+.sidemenu.active{
+    left: 0;
+}
+.sm-nav-content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    gap: 10px;
+    gap: 2rem;
+    position: relative;
+    top: 20%;
+    transition: 1s ease-in-out;
+}
+.sm-nav-inside-content a{
+    text-decoration: none;
+    color: $white;
+    font-weight: 600;
+}
+.sm-nav-inside-content a:hover{
+    color: $color-primary-2;
+    font-weight: 800;
+    text-shadow: 0px 0px 5px #000000;
+    transition: 0.15s ease;
+}
+.sm-nav-inside-content{
+    border: 1px solid $white-header;
+    border-radius: 20px;
+    width: 60%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $text;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+.sm-submenu{
+    display: none;
+}
+.sm-nav-inside-content:hover .sm-submenu{
+    display: block;
+}
+
+@media screen and (max-width: 640px) {
+    .sm-nav-inside-content{
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width: 540px) {
+    .sm-nav-content{
+        margin: 0 2rem;
+    }
+    .sm-nav-inside-content{
+        font-size: 1rem;
+        width: 100%;
+    }
+    .sm-has-submenu{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}

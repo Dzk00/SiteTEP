@@ -1,0 +1,64 @@
+<div class="page-welcome-container">
+    {% if app.request.attributes.get('_route') == 'app_ecole_pedagogie' %}   
+    <h1>Les arts du cirque, pour mieux se connaître</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_ecole_disciplines' %}
+    <h1>Les disciplines enseignées à Tous en Piste</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_ecole_intervenants' %}
+    <h1>Les intervenants au sein de notre école</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_contact' %}
+    <h1>Nous contacter</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_infosp' %}
+    <h1>Infos pratiques</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_actualites' %}
+    <h1>Notre actualité</h1>
+    {% elseif app.request.attributes.get('_route') == 'app_blog' %}
+    {% for blog in blogs %}
+        <h1>{{ blog.titrecourt }}</h1>
+    {% endfor %}
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'app_contact' %}
+    <p>Nous restons joignables par téléphone et par mail directement.</p>
+    {% elseif app.request.attributes.get('_route') == 'app_infosp' %}
+    <p>En cas de difficultés, n'hésitez pas à nous contacter directement par téléphone.</p>
+    {% elseif app.request.attributes.get('_route') == 'app_actualites' %}
+    <p>N'hésitez pas à parcourir nos articles !</p>
+    {% elseif app.request.attributes.get('_route') == 'app_blog' %}
+    <div class="page-welcome-btn">
+        <button><a href="">Actualités</a></button>
+        <button><a href="">Contact</a></button>
+    </div>
+    {% else %}
+    <div class="page-welcome-btn">
+        <button><a href="">Nos cours</a></button>
+        <button><a href="">Inscriptions</a></button>
+    </div>
+    {% endif %}
+    {% if app.request.attributes.get('_route') == 'app_ecole_disciplines' %}
+    <div class="page-welcome-img-container">
+        <div class="page-welcome-img">
+            <img src="{{ asset('images/cirque/page_welcome_1.jpg')}}" alt="">
+        </div>
+        <div class="page-welcome-img">
+            <img src="{{ asset('images/cirque/page_welcome_2.jpg')}}" alt="">
+        </div>
+    </div>
+    {% elseif app.request.attributes.get('_route') == 'app_ecole_intervenants' %}
+    <div class="page-welcome-img-container">
+        <div class="page-welcome-img-inter">
+            <img src="{{ asset('images/intervenants/groupe.jpg')}}" alt="">
+        </div>
+    </div>
+    {% elseif app.request.attributes.get('_route') == 'app_blog' %}
+    <div class="page-welcome-img-container">
+        <div class="page-welcome-img-inter">
+        {% for blog in blogs %}
+        <a href="{{ asset('images/blog/' ~ blog.imagename) }}" class="image-link">
+            <img src="{{ asset('images/blog/' ~ blog.imagename) }}" alt="">
+        </a>
+        <p>Vous pouvez cliquez sur l'image pour l'afficher en plein écran.</p>
+        {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+</div>

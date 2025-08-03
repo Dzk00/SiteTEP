@@ -1,0 +1,248 @@
+// @import '_all.scss';
+
+// $background-cours-baby: url('/public/images/cirque/ecole_baby.jpg');
+
+
+// .cours-title{
+//     padding: 7rem 6rem 0 6rem;
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+// }
+// @media screen and (max-width : 685px){
+//     .cours-title{
+//         flex-direction: column;
+//     }
+// }
+
+// .cours-title h1{
+//     font-size: 2.7rem;
+//     font-weight: 400;
+//     color: $white;
+//     position: relative;
+// }
+// .cours-title h1 span{
+//     color: $color-primary-2;
+// }
+// .cours-title h2{
+//     font-size: 2.7rem;
+//     font-weight: 400;
+//     color: $color-primary-1;
+// }
+// @media screen and (max-width : 475px){
+//     .cours-title{
+//         padding: 0 3rem;
+//     }
+//     .cours-title h1, .cours-title h2{
+//         font-size: 1.7rem;
+//     }
+// }
+// .cours-baby-container{
+//     margin-top: 3rem;
+//     background: $background-cours-baby;
+//     height: 80vh;
+//     background-size: cover;
+//     z-index: -1;
+// }
+// .overlay{
+//     background: $black;
+//     width: 100%;
+//     height: 80vh;
+//     opacity: 0.4;
+//     z-index: 0;
+//     filter: blur(5px);
+//     position: absolute;
+// }
+// .cours-baby-content{
+//     display: flex;
+//     flex-direction: column;
+//     align-items:center;
+//     justify-content: center;
+//     gap: 50px;
+//     padding: 10rem;
+//     color: $white;
+//     z-index: 1;
+//     height: 80vh;
+//     position: relative;
+// }
+// .cours-baby-content h2{
+//     position: relative;
+//     font-size: 3rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+// }
+// .cours-baby-content h2::after{
+//     content: "";
+//     height: 2px;
+//     width: 0;
+//     background: $color-primary-2;
+//     position: absolute;
+//     bottom: 3px;
+//     left: 0;
+//     transition: all 0.5s;
+// }
+// .cours-baby-content h2:hover::after{
+//     width: 285px;
+// }
+// .cours-baby-content h2 span{
+//     color: $color-primary-2;
+// }
+// .cours-baby-content:hover .overlay{
+//     opacity: 0.1;
+// }
+// .cours-baby-content h3{
+//     position: relative;
+//     font-size: 2.2rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+// }
+// .cours-baby-content p{
+//     position: relative;
+//     font-size: 1.6rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+//     text-align: justify;
+// }
+// .cours-baby-content p::first-letter{
+//     color: $color-primary-2;
+// }
+// .cours-junior-container{
+//     height: 80vh;
+//     background-size: cover;
+//     z-index: -1;
+// }
+// .cours-junior-container img{
+//     object-fit: cover;
+//     position: absolute;
+//     z-index: -1;
+//     width: 100%;
+//     height: 80vh;
+//     object-position: 0 0;
+// }
+// .cours-junior-content{
+//     display: flex;
+//     flex-direction: column;
+//     align-items:center;
+//     justify-content: center;
+//     gap: 50px;
+//     padding: 10rem;
+//     color: $white;
+//     z-index: 1;
+//     height: 80vh;
+//     position: relative;
+// }
+// .cours-junior-content h2{
+//     position: relative;
+//     font-size: 3rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+// }
+// .cours-junior-content h2::after{
+//     content: "";
+//     height: 2px;
+//     width: 0;
+//     background: $color-primary-2;
+//     position: absolute;
+//     bottom: 3px;
+//     left: 0;
+//     transition: all 0.5s;
+// }
+// .cours-junior-content h2:hover::after{
+//     width: 310px;
+// }
+// .cours-junior-content h2 span{
+//     color: $color-primary-2;
+// }
+// .cours-junior-content h3{
+//     position: relative;
+//     font-size: 2.2rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+// }
+// .cours-junior-content p{
+//     position: relative;
+//     font-size: 1.6rem;
+//     font-weight: 300;
+//     transition: all 0.3s;
+//     text-shadow: 0px 0px 4px #000000;
+//     text-align: justify;
+// }
+// .cours-junior-content p::first-letter{
+//     color: $color-primary-2;
+// }
+// .kids h2:hover::after{
+//     width: 260px;
+// }
+// .ados h2:hover::after{
+//     width: 285px;
+// }
+// .adultes h2:hover::after{
+//     width: 320px;
+// }
+
+// @media screen and (max-width: 950px) {
+//     .cours-baby-content{
+//         padding: calc(1vw + 10px);
+//     }
+//     .cours-baby-content h2{
+//         font-size: 2.2rem;
+//     }
+//     .cours-baby-content h3{
+//         font-size: 1.6rem;
+//     }
+//     .cours-baby-content p{
+//         font-size: 1.1rem;
+//         text-align: justify;
+//     }
+//     .cours-baby-content h2:hover::after{
+//         width: 210px;
+//     }
+//     .cours-junior-content{
+//         padding: calc(1vw + 10px);
+//     }
+//     .cours-junior-content h2{
+//         font-size: 2.2rem;
+//     }
+//     .cours-junior-content h3{
+//         font-size: 1.6rem;
+//     }
+//     .cours-junior-content p{
+//         font-size: 1.1rem;
+//         text-align: justify;
+//     }
+//     .cours-junior-content h2:hover::after{
+//         width: 225px;
+//     }
+//     .cours-junior-container img{
+//         object-position: 0 0;
+//     }
+//     .kids h2:hover::after{
+//         width: 192px;
+//     }
+//     .ados h2:hover::after{
+//         width: 210px;
+//     }
+//     .adultes h2:hover::after{
+//         width: 235px;
+//     }
+//     .adultes img{
+//         object-position: -100px 0;
+//     }
+// }
+// @media screen and (max-width: 500px) {
+//     .cours-junior-container img{
+//         object-position: -500px 0;
+//     }
+//     .ados img{
+//         object-position: -400px 0;
+//     }
+//     .adultes img{
+//         object-position: -280px 0;
+//     }
+// }
+

@@ -1,0 +1,56 @@
+<footer>
+    <form class="newsletter-container">
+        <input type="text" placeholder="Entrez votre e-mail">
+        <div>
+            <input type="checkbox" name="confi">
+            <label for="confi">J'ai lu et j'accepte les <a href="">Conditions d'Utilisations</a>.</label>
+        </div>
+        <button type="submit">S'abonner à la Newsletter</button>
+    </form>
+    <div class="footer-bar"></div>
+    <div class="footer-content">
+        <div class="footer-logo">
+            <img src="{{ asset('images/logo/logo_tep2.png') }}" alt="logo_tousenpiste">
+        </div>
+        <div class="footer-adresse">
+            <h1>/ Adresse administrative</h1>
+            <p>Tous en Piste</p>
+            <p>Les clos de Mougins</p>
+            <p>65 Impasse des Glycines</p>
+            <p>06250 Mougins, France</p>
+        </div>
+        <div class="footer-adresse">
+            <h1>/ Adresse de l'école</h1>
+            <p>Salle Cirque</p>
+            <p>Collège Rene Cassin</p>
+            <p>528 boulevard Léon Sauvan</p>
+            <p>06690 Tourette-Levens, France</p>
+        </div>
+        <div class="footer-contact">
+            <h1>/ Nous contacter</h1>
+            <a href="">tousenpisteatl@gmail.com</a>
+            <a href="">06.74.46.94.27</a>
+        </div>
+    </div>
+    <div class="footer-space"></div>
+    <div class="footer-bar"></div>
+    <div class="footer-button">
+        <button><span class="footer-btn-content">S'inscrire<i class="fa-solid fa-arrow-right-long"></i></span></button>
+    </div>
+    {% if app.request.attributes.get('_route') == 'app_home' %}
+    <div class="footer-copyright">
+        <p>© 2023 TOUS EN <a href="{{ path("admin")}}">P</a>ISTE</p>
+    </div>
+    {% else %}
+    <div class="footer-copyright">
+        <p>© 2023 TOUS EN PISTE</p>
+    </div>
+    {% endif %}
+    <div class="footer-space"></div>
+    <div class="footer-partner">
+        <img src="{{ asset('images/logo/logo_tourette.jpeg')}}" alt="logo_tourettelevens">
+        <img src="{{ asset('images/logo/logo_metropole.jpeg')}}" alt="logo_departement_alpes_maritimes">
+        <img src="{{ asset('images/logo/logo_monaco.jpg')}}" alt="logo_monaco">
+
+    </div>
+</footer>

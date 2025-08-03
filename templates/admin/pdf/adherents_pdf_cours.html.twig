@@ -1,0 +1,68 @@
+{# templates/admin/pdf/adherents_pdf.html.twig #}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Adhérents</title>
+    <style>
+    .stage-table{
+    border-collapse: collapse;
+    width: 100%;
+    }
+    .stage-table th, .stage-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+    }
+    .container{
+        height: 100%;
+    }
+    .pdf-title{
+        position: relative;
+        top: 35%;
+    }
+    .pdf-title h1{
+        font-size: 60px;
+        text-align: center;
+    }
+    .pdf-title h2{
+        font-size: 40px;
+        text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <div class="pdf-title">
+    <h1>Tous en piste</h1>
+    <h2>Année 2023-2024</h2>
+    </div>
+    {% for idCours, cours in adherentsGroupedByStage %}
+    <div class="container">
+        <h2>Enfants pour le cours "{{ cours.getNomCours() }}"</h2>
+        <table class="stage-table main">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prénom</th>
+                    <th>Mail</th>
+                    <th>Téléphone</th>
+                    <th>Tel.secours</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for adherent in stageAdherents %}
+                    <tr>
+                        <td>{{ adherent.nomAd }}</td>
+                        <td>{{ adherent.prenomAd }}</td>
+                        <td>{{ adherent.mailAd }}</td>
+                        <td>{{ adherent.telAd }}</td>
+                        <td>{{ adherent.telSecoursAd }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les actualités de Tous en Piste !{% endblock %}
+
+{% block body %}
+
+{{ include('components/_welcomepage.html.twig', { 'blogs': blogs }) }}
+
+<div class="blog-unique-container">
+{% for blog in blogs %}
+    <div class="blog-unique-content">
+        <h2>{{ blog.titre }}</h2>
+        <p>{{ blog.descriptionLongueUn }}</p>
+        <p>{{ blog.descriptionLongue2 }}</p>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

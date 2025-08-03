@@ -1,0 +1,29 @@
+
+<div class="sidemenu" id="sideMenu">
+    <div class="sm-nav-content">
+        <div class="sm-nav-inside-content">
+            <a href="{{ path('app_home')}}">Accueil</a>
+        </div>
+        <div class="sm-nav-inside-content sm-has-submenu" id="subMenu">
+            <a href="{{ path('app_ecole')}}" >Notre école <i class="fa-solid fa-arrow-down"></i></a>
+            <ul class="sm-submenu" id="subMenu2">
+                <li><a href="{{ path('app_ecole_cours')}}">Cours</a></li>
+                <li><a href="{{ path('app_ecole_pedagogie')}}">Pédagogie</a></li>
+                <li><a href="{{ path('app_ecole_disciplines')}}">Disciplines</a></li>
+                <li><a href="{{ path('app_ecole_intervenants')}}">Intervenants</a></li>
+            </ul>
+        </div>
+        <div class="sm-nav-inside-content sm-has-submenu" id="subMenu3">
+            <a href="">Inscriptions <i class="fa-solid fa-arrow-down"></i></a>
+            <ul class="sm-submenu" id="subMenu4">
+                <li><a href="">Annuelle</a></li>
+                <li><a href="">Stages</a></li>
+            </ul>
+        </div>
+        <div class="sm-nav-inside-content">
+            <a href="">évènements</a>
+        </div>
+        <div class="sm-nav-inside-content">
+            <a href="">Contact</a>
+        </div>
+</div>

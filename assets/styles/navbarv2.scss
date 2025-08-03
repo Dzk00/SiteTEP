@@ -1,0 +1,490 @@
+@import '_all.scss';
+
+.navbarv2-container.scrollUp{
+    top: -80px;
+}
+.navbarv2-mobile-container.scrollUp{
+    top: -80px;
+}
+.navbarv2-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+    width: 100%;
+    z-index: 5;
+    background: transparent;
+    backdrop-filter: blur(600px);
+    box-shadow: 0.5px 0.5px 10px 0.5px $black;
+}
+.navbarv2-container.activeToggle{
+    background: none;
+    backdrop-filter: blur(0px);
+    transition: all 0s;
+}
+.navbar-v2{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 3rem;
+}
+.btn-menu-v2 button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    text-transform: uppercase;
+    color: $color-primary-2;
+    gap: 17px;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 35px;
+    width: 155px;
+    font-size: 1.1rem;
+    transition: all 0.5s;
+    z-index: 5;
+}
+.btn-menu-v2 button:hover{
+    color: $black;
+    background: $color-primary-2;
+}
+.btn-menu-v2 button:hover .btn-menu-line{
+    background: $black;
+}
+.btn-menu-burger{
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-menu-line{
+    transition: all 0.5s;
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 25px;
+    background: $color-primary-2;
+}
+.btn-menu-line.activeToggle{
+    background: $black;
+}
+.btn-menu-v2.activeToggle button{
+    color: $black;
+}
+.btn-menu-line.activeToggle:nth-child(1){
+    transform: rotate(405deg);
+    width: 22px;
+}
+.btn-menu-line.activeToggle:nth-child(2){
+    transform: rotate(-405deg);
+    width: 22px;
+    bottom: 2px;
+}
+.btn-menu-burger.activeToggle{
+    gap: 10px;
+    display: block;
+    justify-content: none;
+    align-items: none;
+}
+.navbar-title-v2{
+    position: absolute;
+    left: 45%;
+}
+.navbar-title-v2 a{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $color-primary-2;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 0 3px $black;
+}
+.navbar-title-v2 a:hover{
+    color: $color-primary-2-hover;
+}
+.navbar-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.navbar-btn button{
+    border: none;
+    text-transform: uppercase;
+    gap: 7px;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 35px;
+    width: 155px;
+    font-size: 1.1rem;
+    background: none;
+}
+.navbar-btn button a{
+    color: $color-primary-2;
+}
+.navbar-btn button:hover a{
+    color: $bg;
+}
+.navbar-btn button:nth-child(2){
+    border: 1px solid $color-primary-2;
+}
+.navbar-btn button:nth-child(1):hover{
+    background: $color-primary-2;
+}
+.navbar-btn button:nth-child(2):hover{
+    background: $color-primary-2;
+    color: $bg;
+}
+
+
+// SIDEMENU
+
+.side-left{
+    position: fixed;
+    left: -100%;
+    background: $white;
+    height: 100vh;
+    width: 50%;
+    z-index: 4;
+    transition: all 0.5s;
+}
+.side-left.activeToggle{
+    left: 0;
+    transition: all 0.5s;
+}
+.have-submenu{
+    display: none;
+}
+.div-has-sub:hover .have-submenu{
+    display: block;
+}
+.sidemenu-center{
+    position: absolute;
+    top: 30%;
+    left: 15%;
+    width: 40vw;
+}
+.sidemenu-inside a{
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10vw;
+    color: $text;
+    border-bottom: 1px solid black;
+}
+.have-submenu li a{
+    border: none;
+    margin-left: 1em;
+}
+.sidemenu-inside a::first-letter{
+    color: $color-primary-2;
+    text-transform: uppercase;
+}
+.sidemenu-inside a:hover{
+    color: $color-primary-2;
+}
+.sidemenu-inside a i{
+    color: $color-primary-2;
+}
+.sidemenu-bottom{
+    position: absolute;
+    bottom: 0;
+    left: calc(6vw + 1px);
+    margin: 4em 1em;
+}
+.sidemenu-bottom ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.sidemenu-bottom ul i{
+    color: $color-primary-2;
+}
+.sidemenu-bottom ul li a{
+    font-size: 0.9rem;
+    color: $text;
+}
+.sidemenu-bottom ul li a:hover{
+    color: $color-primary-2;
+}
+.side-right{
+    position: fixed;
+    right: -100%;
+    background: $bg-nav-right;
+    height: 100vh;
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 4;
+    transition: all 0.5s;
+}
+.side-right.activeToggle{
+    right: 0;
+}
+.right-img img{
+    object-fit: cover;
+    width: 20rem;
+    height: 25rem;
+    border: 1px solid white;
+}
+
+.navbarv2-container.activeToggle{
+    background: transparent;
+    box-shadow: none;
+}
+.navbar-title-v2.activeToggle{
+    display: none;
+}
+.navbar-btn.activeToggle{
+    display: none;
+}
+
+// NAV MOBILE
+
+.navbarv2-mobile-container{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $bg;
+    box-shadow: 0.5px 0.5px 10px 0.5px $black;
+    z-index: 5;
+    transition: all 0.5s;
+}
+.navbar-v2-mobile{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem;
+}
+.btn-menu-v2-mobile button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
+    transition: all 0.5s;
+    z-index: 5;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.btn-menu-v2-mobile button:hover{
+    background: $color-primary-2;
+}
+
+.btn-menu-burger-mobile{
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.btn-menu-line-mobile{
+    transition: all 0.5s;
+    display: block;
+    position: relative;
+    height: 2px;
+    width: 25px;
+    background: $color-primary-2;
+}
+.btn-menu-v2-mobile button:hover .btn-menu-line-mobile{
+    background: $black;
+}
+.btn-menu-line-mobile.activeToggle{
+    background: $white;
+}
+.btn-menu-v2-mobile.activeToggle{
+    justify-self: flex-end;
+}
+.btn-menu-v2-mobile.activeToggle button{
+    color: $black;
+    justify-self: end;
+}
+.btn-menu-line-mobile.activeToggle:nth-child(1){
+    transform: rotate(405deg);
+    width: 22px;
+}
+.btn-menu-line-mobile.activeToggle:nth-child(2){
+    transform: rotate(-405deg);
+    width: 22px;
+    bottom: 2px;
+}
+.btn-menu-burger-mobile.activeToggle{
+    gap: 10px;
+    display: block;
+    justify-content: end;
+    align-items: none;
+}
+.navbar-title-v2-mobile a{
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $color-primary-2;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-shadow: 0 0 3px $black;
+}
+.navbar-title-v2-mobile a:hover{
+    color: $color-primary-1-hover;
+}
+.navbarv2-mobile-container.activeToggle{
+    background: transparent;
+    box-shadow: none;
+}
+.navbar-title-v2-mobile.activeToggle{
+    display: none;
+}
+
+// SIDE MENU MOBILE 
+
+.side-mobile{
+    background: $bg-nav-mobile;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    right: -100%;
+    z-index: 4;
+}
+.side-mobile.activeToggle{
+    right: 0;
+}
+.have-submenu-mobile{
+    display: none;
+}
+.have-submenu-mobile.activeToggle{
+    display: block;
+}
+.side-mobile-container{
+    position: relative;
+    top: 8%;
+}
+.sidemenu-inside-mobile{
+    margin: 0 2rem;
+}
+.sidemenu-inside-mobile a, .sidemenu-inside-mobile p{
+    font-size: 2.5rem;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 10vw;
+    color: $white;
+    border-bottom: 1px solid white;
+    cursor: pointer;
+}
+
+.have-submenu-mobile li a{
+    border: none;
+    margin: 1em;
+}
+.sidemenu-inside-mobile a:hover, .sidemenu-inside-mobile p:hover{
+    color: $color-primary-2;
+}
+.sidemenu-inside-mobile a i, .sidemenu-inside-mobile p i{
+    color: $color-primary-2;
+    font-size: 4rem;
+    margin: 1rem;
+}
+.navbar-btn-mobile{
+    width: 100vw;
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+    margin: 3rem 0;
+}
+.navbar-btn-mobile button{
+    border: none;
+    gap: 7px;
+    cursor: pointer;
+    border-radius: 50px;
+    height: 45px;
+    width: 175px;
+    background: none;
+    border: 1px solid $color-primary-2;
+}
+.navbar-btn-mobile button a{
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: $color-primary-2;
+}
+.navbar-btn-mobile button:nth-child(1){
+    background: $color-primary-2;
+}
+.navbar-btn-mobile button:nth-child(1) a{
+    color: $bg-nav-mobile;
+}
+.navbar-btn-mobile button:nth-child(1):hover{
+    background: none;
+}
+.navbar-btn-mobile button:nth-child(1):hover a{
+    color: $color-primary-2;
+}
+.navbar-btn-mobile button:nth-child(2):hover{
+    background: $color-primary-2;
+}
+.navbar-btn-mobile button:nth-child(2):hover a{
+    color: $bg-nav-mobile;
+}
+.nav-mobile-other{
+    margin: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.nav-mobile-socials a{
+    color: $color-primary-2;
+}
+.nav-mobile-confid a{
+    color: $white;
+}
+.nav-mobile-other a:hover{
+    color: $color-primary-2-hover;
+}
+.nav-mobile-confid a:hover{
+    color: $color-primary-2;
+}
+@media only screen and (max-width: 1350px) {
+    .navbar-title-v2{
+        flex: 1;
+        position: inherit;
+        margin-left: 1em;
+    }
+}
+@media only screen and (max-width: 1050px) {
+    .side-left{
+        display: none;
+    }
+    .side-right{
+        display: none;
+    }
+    .navbarv2-container{
+        display: none;
+    }
+    .navbarv2-mobile-container{
+        visibility: visible;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .sidemenu-inside-mobile a, .sidemenu-inside-mobile p{
+        font-size: 1.5rem;
+    }
+    .navbar-btn-mobile{
+        flex-direction: column;
+        align-items: center;
+    }
+}

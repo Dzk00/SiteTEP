@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous en Piste{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/cours_adultes.jpg')}}" alt="">
+</div>
+
+{{ include('components/_coursnav.html.twig') }}
+
+<div class="cours-container">
+    <h1>Cours à l'année - <span>Adultes</span></h1>
+    <div class="cours-infos">
+
+        <div class="cours-infos-left">
+            <h2>Infos pratiques</h2>
+            <p>Les cours ont lieu chaque mardi et durent 1h30.</p>
+            <p>Un stage de 2h est organisé chaque samedi.</p>
+            <div class="cours-infos-left-time">
+                <div class="cours-infos-left-time-1">
+                    <p>19h30 - 21h</p>
+                    <p>Cours du mardi</p>
+                </div>
+                <div class="cours-infos-left-time-bar"></div>
+                <div class="cours-infos-left-time-2">
+                    <p>14h00 - 16h00</p>
+                    <p>Stage du samedi</p>
+                </div>
+            </div>
+            <p>Les inscriptions sont ouvertes à partir du <span>JJ/MM/AAAA</span>.</p>
+            <p>Infos inscription à remplir (corinne) afin de déterminer si le premier cours est offert, si il faut s'inscrire avant le cours, quand et comment donner le paiement.</p>
+            <p>Prix à l'année des cours du mardi: <span>390€</span></p>
+            <p>Prix pour un stage de 2h le samedi: <span>50€</span></p>
+        </div>
+
+        <div class="cours-infos-right">
+            <h2>Inscriptions</h2>
+            <p>L'inscription sera définitive à compter de la reception du formulaire ci-joint sur le site via notre page Inscriptions ou le bouton ci-dessous et du règlement de la cotisation annuelle par chèque ou virement.</p>
+            <button><i class="fa-solid fa-circle-chevron-down"></i>Formulaire d'inscription</button>
+        </div>
+    </div>
+</div>
+
+<div class="cours-content-container">
+    <div class="cours-content-text">
+        <h2>Pour les adultes et les adolescents</h2>
+        <p>Quoi de mieux que le cirque comme sport hebdomadaire ? Votre corps sera sollicité dans son ensemble et la pratique d'une activité de cirque aérien vous fera travailler tous vos groupes musculaires afin de vous maintenir en forme. Les cours sont adaptés à chaque personne, en fonction de son âge et de son niveau. </p>
+        <p>Les stages le samedi sont optionnels et ouvert aux adolescents souhaitant augmenter leur pratique afin de se perfectionner.</p>
+    </div>
+    <div class="cours-content-img">
+        <img src="{{ asset('images/cirque/cours_adultes_1.jpg')}}" alt="">
+        <img src="{{ asset('images/cirque/cours_adultes_2.jpg')}}" alt="">
+    </div>
+</div>
+{% endblock %}

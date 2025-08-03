@@ -1,0 +1,35 @@
+<div class="cours-nav">
+    <ul> 
+        {% if app.request.attributes.get('_route') == 'app_cours_minis' %}   
+        <li class="active"><a href="{{ path('app_cours_minis')}}">Minis <span><br> 4 à 6 ans</span></a></li>
+        <li><a href="{{ path('app_cours_junior')}}">Juniors <span><br> 7 à 8 ans</span></a></li>
+        <li><a href="{{ path('app_cours_kids')}}">Kids <span><br> 9 à 10 ans</span></a></li>
+        <li><a href="{{ path('app_cours_ados')}}">Ados <span><br> À partir de 11 ans</span></a></li>
+        <li><a href="{{ path('app_cours_adultes')}}">Adultes <span><br> Tout âge</span></a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_cours_junior' %}
+        <li><a href="{{ path('app_cours_minis')}}">Minis <span><br> 4 à 6 ans</span></a></li>
+        <li class="active"><a href="{{ path('app_cours_junior')}}">Juniors <span><br> 7 à 8 ans</span></a></li>
+        <li><a href="{{ path('app_cours_kids')}}">Kids <span><br> 9 à 10 ans</span></a></li>
+        <li><a href="{{ path('app_cours_ados')}}">Ados <span><br> À partir de 11 ans</span></a></li>
+        <li><a href="{{ path('app_cours_adultes')}}">Adultes<span><br> Tout âge</span></a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_cours_kids' %}
+        <li><a href="{{ path('app_cours_minis')}}">Minis <span><br> 4 à 6 ans</span></a></li>
+        <li><a href="{{ path('app_cours_junior')}}">Juniors <span><br> 7 à 8 ans</span></a></li>
+        <li class="active"><a href="{{ path('app_cours_kids')}}">Kids <span><br> 9 à 10 ans</span></a></li>
+        <li><a href="{{ path('app_cours_ados')}}">Ados <span><br> À partir de 11 ans</span></a></li>
+        <li><a href="{{ path('app_cours_adultes')}}">Adultes<span><br> Tout âge</span></a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_cours_ados' %}
+        <li><a href="{{ path('app_cours_minis')}}">Minis <span><br> 4 à 6 ans</span></a></li>
+        <li><a href="{{ path('app_cours_junior')}}">Juniors <span><br> 7 à 8 ans</span></a></li>
+        <li><a href="{{ path('app_cours_kids')}}">Kids <span><br> 9 à 10 ans</span></a></li>
+        <li class="active"><a href="{{ path('app_cours_ados')}}">Ados <span><br> À partir de 11 ans</span></a></li>
+        <li><a href="{{ path('app_cours_adultes')}}">Adultes<span><br> Tout âge</span></a></li>
+        {% elseif app.request.attributes.get('_route') == 'app_cours_adultes' %}
+        <li><a href="{{ path('app_cours_minis')}}">Minis <span><br> 4 à 6 ans</span></a></li>
+        <li><a href="{{ path('app_cours_junior')}}">Juniors <span><br> 7 à 8 ans</span></a></li>
+        <li><a href="{{ path('app_cours_kids')}}">Kids <span><br> 9 à 10 ans</span></a></li>
+        <li><a href="{{ path('app_cours_ados')}}">Ados <span><br> À partir de 11 ans</span></a></li>
+        <li class="active"><a href="{{ path('app_cours_adultes')}}">Adultes<span><br> Tout âge</span></a></li>
+        {% endif %}
+    </ul>
+</div>

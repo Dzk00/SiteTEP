@@ -1,0 +1,220 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StagsController!{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/stages_monaco.jpg')}}" alt="">
+</div>
+
+{{ include('components/_stagesnav.html.twig') }}
+
+<div class="stages-container">
+    <div class="stages-container-title">
+        <h2>Multidisciplinary Workshops</h2>
+        <p class="center">Under the circus tent of Monte-Carlo International Circus Festival</p>
+    </div>
+    <div class="stages-infos">
+        <div class="stages-infos-left">
+            <h3>Informations</h3>
+            <p>Resgitration is weekly, for <span>5 full days</span> or <span>5 half-days</span> (AM/PM).</p>
+            <div class="stages-infos-left-prix-1">
+                <p><span>280€</span></p>
+                <p>Full day <span>from 10am to 4:30pm</span></p>
+            </div>
+            <div class="stages-infos-left-prix-bar"></div>
+            <div class="stages-infos-left-prix-2">
+                <p><span>175€</span></p>
+                <p>Half-day <span>from 10am to 12:30pm</span> or <span>from 2pm to 4:30pm</span></p>
+            </div>
+            <p>To provide :</p>
+            <p>A light sports outfit, hair tied up, meals for the whole day, snacks and bottle of water.</p>
+            <h4>Registration will be final upon receipt of your non-refundable payment except on medical certificate.</h4>
+        </div>
+
+        <div class="stages-infos-right">
+            <div class="stages-infos-right-1">
+            <h3>From 4 years old</h3>
+            <p>From <span>8</span> july to <span>12</span> july</p>
+            <p>From <span>15</span> july to <span>19</span> july</p>
+            <p>From <span>22</span> july to <span>26</span> july</p>
+            <p>From <span>29</span> july to <span>2</span> august</p>
+            <p>From <span>5</span> august to <span>9</span> august</p>
+            </div>
+            <div class="stages-infos-right-2">
+                <h3>NEW!</h3>
+                <p><span>Daycare</span> option</p>
+                <p><span>9am to 10am</span> and <span>4:30pm to 5pm</span></p>
+                <p>Price : <span>50€</span> the whole week.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="stages-paiement">
+    <h3>Payment information</h3>
+    <p>Payment possible in <span>cash</span>, <span>check</span> or <span>bank transfer</span>.</p>
+    <p>To be <span>dropped off</span> at the office of Monte Carlo Festivals in frot of the tent (from 9am to 1pm and 2pm to 6pm).</p>
+    <p>Or <span>send</span> to Tous en Piste, Les Clos de Mougins, 65 Impasse des Glycines, 06250 Mougins.</p>
+    <h4>IMPORTANT : Put the child's name on the back of the check or on the transfer</h4>
+    <button>Bank Statement (RIB)</button>
+</div>
+
+{% for flashError in app.flashes('error') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups..</h2>
+            <p>A problem has occurred, please contact us.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('succes') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>thanks !</h2>
+            <p>Your registration has been taken into account. You will receive a confirmation after receiving your payment.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('fail') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups...</h2>
+            <p>You tried to register for a full workshop. Please select one with space.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('mail') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups...</h2>
+            <p>Your mail is invalid. Please check it.</p>
+        </div>
+    </div>
+{% endfor %}
+
+{{ form_start(form, {'attr': {'class': 'form-container'}}) }}
+    <p>*Champs obligatoires</p>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.nom_ad.vars.id }}">
+            <span>*</span> Name :
+            </label> 
+            {{ form_widget(form.nom_ad, {'attr': {'placeholder': 'Child\'s name.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.prenom_ad.vars.id }}">
+            <span>*</span> First name :
+            </label>            
+            {{ form_widget(form.prenom_ad, {'attr': {'placeholder': 'Child\'s first name.'}}) }}
+        </div>
+    </div>
+    <div class="row row-alone">
+        {{ form_label(form.adresse_ad, 'Address :') }}
+        {{ form_widget(form.adresse_ad, {'attr': {'placeholder': 'Your address.'}}) }}
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.ville.vars.id }}">
+            <span>*</span> City :
+            </label>
+            {{ form_widget(form.ville, {'attr': {'placeholder': 'Your city.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.code_postal_ad.vars.id }}">
+            <span>*</span> CP :
+            </label>
+            {{ form_widget(form.code_postal_ad, {'attr': {'placeholder': 'Your CP.'}}) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.mail_ad.vars.id }}">
+            <span>*</span> Mail :
+            </label>
+            {{ form_widget(form.mail_ad, {'attr': {'placeholder': 'Your email.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.date_naissance_ad.vars.id }}">
+            <span>*</span> Date of Birth :
+            </label>
+            {{ form_widget(form.date_naissance_ad) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.tel_ad.vars.id }}">
+            <span>*</span> Main phone :
+            </label>
+            {{ form_widget(form.tel_ad, {'attr': {'placeholder': 'Phone to reach you on a daily basis.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.tel_secours_ad.vars.id }}">
+            <span>*</span> Emergency phone :
+            </label>
+            {{ form_widget(form.tel_secours_ad, {'attr': {'placeholder': 'Telephone to contact you in case of emergency.'}}) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            {{ form_label(form.tel_pere_ad, 'Other phone (if necessary) :') }}
+            {{ form_widget(form.tel_pere_ad, {'attr': {'placeholder': 'Phone.'}}) }}
+        </div>
+        <div class="row">
+            {{ form_label(form.tel_mere_ad, 'Other phone (if necessary) :') }}
+            {{ form_widget(form.tel_mere_ad, {'attr': {'placeholder': 'Phone.'}}) }}
+        </div>
+    </div>
+    <div class="row row-alone row-select">
+        <label for="{{ form.stage_ad.vars.id }}">
+            <span>*</span> Workshop (you can select several courses by holding the CTRL key on your keyboard, please be careful not to register for a full day and a half-day of the same week.) :
+            </label>
+        {{ form_widget(form.stage_ad) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.autorisation_urgence.vars.id }}">
+        <span>*</span> Tous en Piste is authorized to take the necessary measures to have the injured person transported to the nearest hospital if it is impossible to contact the legal representative, so that treatment can be provided.
+        </label>
+        {{ form_widget(form.autorisation_urgence) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.vaccins_ad.vars.id }}">
+            <span>*</span> Up-to-date vaccinations :
+        </label>
+        {{ form_widget(form.vaccins_ad) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.antecedents_medicaux_ad.vars.id }}">
+            <span>*</span> Medical history and recommendations :
+        </label>
+        {{ form_widget(form.antecedents_medicaux_ad ,{'attr': {'placeholder': 'Please provide all necessary information to ensure your child\'s medical safety.'}}) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.droit_image_ad.vars.id }}">
+            <span>*</span> Authorization of image rights from both parents or the person responsible for the child, within the framework of the circus school.
+        </label>
+        {{ form_widget(form.droit_image_ad) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.garderie_stage.vars.id }}">
+            Daycare option.
+        </label>
+        {{ form_widget(form.garderie_stage) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.sortie_autonome.vars.id }}">
+            I authorize my child to leave alone without an accompanying adult at the end of the workshop
+        </label>
+        {{ form_widget(form.sortie_autonome) }}
+    </div>
+    <div class="row-btn">
+        <button type="submit">I reserve my place</button>
+    </div>
+{{ form_end(form) }}
+
+
+{% endblock %}

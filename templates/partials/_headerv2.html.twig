@@ -1,0 +1,136 @@
+<header>
+    <nav id="navbar">
+
+        <div class="navbarv2-container" id="NavContainer">
+            <div class="navbar-v2">
+                <div class="btn-menu-v2" id="NavBtn">
+                    <button id="Btn-Toggle">
+                    <span class="btn-menu-burger" id="NavBtn2">
+                        <span class="btn-menu-line" id="Btn-Menu-1"></span>
+                        <span class="btn-menu-line" id="Btn-Menu-2"></span>
+                    </span>
+                    Menu
+                    </button>
+                </div>
+                <div class="navbar-title-v2" id="NavTitle">
+                    <a href="{{ path('app_home')}}">Tous en Piste</a>
+                </div>
+                <div class="navbar-btn" id="NavOther">
+                    <button><a href="{{ path('app_contact')}}">Contact</a></button>
+                    <button><a href="{{ path('app_inscriptions')}}">Inscriptions</a></button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="navbarv2-mobile-container" id="NavContainer-Mobile">
+            <div class="navbar-v2-mobile">
+                <div class="navbar-title-v2-mobile" id="NavTitle-Mobile">
+                    <a href="{{ path('app_home')}}">Tous en Piste</a>
+                </div>
+                <div class="btn-menu-v2-mobile" id="NavBtn-Mobile">
+                    <button id="Btn-Toggle-Mobile">
+                    <span class="btn-menu-burger-mobile" id="NavBtn2-Mobile">
+                        <span class="btn-menu-line-mobile" id="Btn-Menu-1-Mobile"></span>
+                        <span class="btn-menu-line-mobile" id="Btn-Menu-2-Mobile"></span>
+                    </span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+
+            <div class="side-left" id="Left">
+                <div class="sidemenu-center">
+                    <div class="sidemenu-inside">
+                        <a href="{{ path('app_home')}}">Accueil <i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+                    <div class="sidemenu-inside div-has-sub">
+                        <a href="{{ path('app_cours_minis')}}">Notre école <i class="fa-solid fa-circle-chevron-down"></i></a>
+                        <ul class="have-submenu">
+                            <li><a href="{{ path('app_cours_minis')}}">Cours</a></li>
+                            <li><a href="{{ path('app_ecole_pedagogie')}}">Pédagogie</a></li>
+                            <li><a href="{{ path('app_ecole_disciplines')}}">Disciplines</a></li>
+                            <li><a href="{{ path('app_ecole_intervenants')}}">Intervenants</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidemenu-inside div-has-sub">
+                        <a href="{{ path('app_inscriptions')}}">S'inscrire <i class="fa-solid fa-circle-chevron-down"></i></a>
+                        <ul class="have-submenu">
+                            <li><a href="{{ path('app_inscriptions')}}">Cours annuels</a></li>
+                            <li><a href="{{ path('app_stages_monaco')}}">Stages</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidemenu-inside">
+                        <a href="{{ path('app_actualites')}}">Actualités <i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="sidemenu-bottom">
+                    <ul>
+                        <li><a href="{{ path('app_home')}}">Tous en Piste</a></li>
+                        <i class="fa-solid fa-globe"></i>
+                        <li><a href="{{ path('app_infosp')}}">Infos pratiques</a></li>
+                        <i class="fa-solid fa-globe"></i>
+                        <li><a href="{{ path('app_contact')}}">Nous contacter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="side-right" id="Right">
+                <div class="right-img">
+                    <img src="{{ asset('images/nav/circus_nav_1.jpg') }}" alt="">
+                </div>
+                <div class="right-img">
+                    <img src="{{ asset('images/nav/circus_nav_2.jpg') }}" alt="">
+                </div>            
+            </div>
+
+
+            <div class="side-mobile" id="SideNavMobile">
+                <div class="side-mobile-container">
+                <div class="sidemenu-center-mobile">
+                    <div class="sidemenu-inside-mobile">
+                        <a href="{{ path('app_home')}}">Accueil <i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+                    <div class="sidemenu-inside-mobile div-has-sub-mobile" id="SubMenuMobile">
+                        <p>Notre école <i class="fa-solid fa-circle-chevron-down"></i></p>
+                        <ul class="have-submenu-mobile" id="SubMenuMobileContent">
+                            <li><a href="{{ path('app_cours_minis')}}">Cours</a></li>
+                            <li><a href="{{ path('app_ecole_pedagogie')}}">Pédagogie</a></li>
+                            <li><a href="{{ path('app_ecole_disciplines')}}">Disciplines</a></li>
+                            <li><a href="{{ path('app_ecole_intervenants')}}">Intervenants</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidemenu-inside-mobile div-has-sub-mobile" id="SubMenuMobile2">
+                        <p>S'inscrire <i class="fa-solid fa-circle-chevron-down"></i></p>
+                        <ul class="have-submenu-mobile" id="SubMenuMobileContent2">
+                            <li><a href="{{ path('app_inscriptions')}}">Cours annuels</a></li>
+                            <li><a href="{{ path('app_stages_monaco')}}">Stages</a></li>
+                        </ul>
+                    </div>
+                    <div class="sidemenu-inside-mobile">
+                        <a href="{{ path('app_actualites')}}">Actualités<i class="fa-solid fa-circle-chevron-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="navbar-btn-mobile">
+                    <button><a href="{{ path('app_contact')}}">Contact</a></button>
+                    <button><a href="{{ path('app_inscriptions')}}">Inscriptions</a></button>
+                </div>
+
+                <div class="nav-mobile-other">
+                    <div class="nav-mobile-socials">
+                        <a href="">Facebook</a>
+                        <a href="">Instagram</a>
+                        <a href="">Youtube</a>
+                    </div>
+                    <div class="nav-mobile-confid">
+                        <a href="">Mentions légales</a>
+                        <a href="">Politique de confidentialité</a>
+                        <a href="">© 2023</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+    </nav>
+</header>

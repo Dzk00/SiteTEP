@@ -1,0 +1,116 @@
+@import '_all.scss';
+
+.blog-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 3rem;
+}
+.blog-content{
+    width: 30rem;
+    height: 35rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px;
+    position: relative;
+    background: $bg-nav-mobile;
+    padding: 0.5rem;
+}
+
+.blog-content-img{
+    width: 29rem;
+    height: 20rem;
+}
+@media only screen and (max-width: 450px){
+    .blog-container{
+        width: 100vw;
+        margin: 0;
+        gap: 15px;
+        margin-top: 15px;
+    }
+    .blog-content-img{
+        width: 100%;
+    }
+}
+.blog-content-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0;
+    border-radius: 5px;
+}
+.blog-content h2{
+    text-align: center;
+    color: $color-primary-2;
+    font-weight: 600;
+    letter-spacing: .1px;
+    font-size: 1.3rem;
+}
+.blog-content p{
+    text-align: justify;
+    color: $white;
+    font-weight: 300;
+    letter-spacing: .1px;
+    font-size: .9rem;
+    margin: 1rem;
+}
+.blog-content button{
+    align-self: center;
+    position: absolute;
+    bottom: 10px;
+    height: 2rem;
+    width: 15rem;
+    border-radius: 50px;
+    background: none;
+    border: 1px solid $color-primary-2;
+    cursor: pointer;
+    transition: ease-in 0.5s;
+}
+.blog-content button a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    text-transform: uppercase;
+    color: $color-primary-2;
+    font-size: .9rem;
+    letter-spacing: .1px;
+}
+.blog-content button i{
+    font-size: 1.2rem;
+}
+.blog-content button:hover{
+    background: $color-primary-2;
+}
+.blog-content button:hover a{
+    color: $bg-nav-mobile;
+    gap: 45px;
+}
+
+
+.blog-unique-container{
+    margin-top: 23rem;
+}
+.blog-unique-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    letter-spacing: .1px;
+    margin: 0 2rem;
+}
+.blog-unique-content h2{
+    text-align: justify;
+    font-size: 1.3rem;
+    color: $color-primary-2;
+    margin-bottom: .6rem;
+}
+.blog-unique-content p{
+    text-align: justify;
+    color: $white;
+    font-size: .9rem;
+}

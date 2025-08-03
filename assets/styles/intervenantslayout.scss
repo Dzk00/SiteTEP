@@ -1,0 +1,108 @@
+@import '_all.scss';
+
+.inter-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+.inter-container h2{
+    color: $color-primary-2;
+    font-size: 1.7rem;
+}
+.inter-cards-container{
+    display: grid; 
+    grid-template-columns: 0.5fr 0.5fr; 
+    grid-template-rows: 0.5fr 0.5fr; 
+    gap: 40px 20px; 
+    grid-template-areas: 
+        ". ."
+        ". ."; 
+}
+.cards{
+    display: flex;
+    gap: 20px;
+}
+.cards-img{
+    width: 12rem;
+    height: 17rem;
+}
+.cards-img img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+.cards-content{
+    flex-basis: 0.5;
+    flex-grow: 0.5;
+    display: flex;
+    flex-direction: column;
+}
+.cards-content h3{
+    position: relative;
+    font-size: 1.2rem;
+    letter-spacing: .1px;
+    text-transform: uppercase;
+    color: $color-primary-2;
+}
+.cards-content h3::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 60px;
+    background: $color-primary-2;
+    border-radius: 20px;
+}
+.cards-content p{
+    text-align: justify;
+    position: relative;
+    width: 20rem;
+    color: $white;
+    font-size: 0.9rem;
+    letter-spacing: .1px;
+    padding: 0.5rem;
+}
+.cards-content p:after{
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    height: 2px;
+    width: 60px;
+    background: $color-primary-2;
+    border-radius: 20px;
+}
+
+
+@media screen and (max-width: 1100px){
+    .inter-cards-container{
+        display: flex;
+        flex-direction: column;
+    }
+    .cards-content p{
+        width: 60vw;
+    }
+    .cards-img{
+        width: 15rem;
+    }
+}
+@media screen and (max-width: 750px){
+    .cards {
+        flex-direction: column;
+    }
+    .cards-img{
+        padding: 0 2rem 0 2rem;
+        width: 100%;
+        height: 30rem;
+        align-self: center;
+    }
+    .cards-content{
+        padding: 2rem;
+    }
+    .cards-content p{
+        width: auto;
+    }
+}

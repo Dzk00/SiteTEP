@@ -1,0 +1,78 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+{{ include('components/_welcomepage.html.twig') }}
+
+{% for flashError in app.flashes('error') %}
+    <div class="msg_pasok">
+        <p>Votre message n'a pas été envoyé. Veuillez nous contacter par téléphone.</p>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('succes') %}
+    <div class="msg_ok">
+        <p>Votre message à bien été envoyé</p>
+    </div>
+{% endfor %}
+{{ form_start(form, {'attr': {'class': 'form-contact-container'}}) }}
+    <h2>Contactez-nous !</h2>
+    <div class="contact-row-line">
+        <div class="contact-row">
+            {{ form_label(form.name, 'Nom :') }}
+            {{ form_widget(form.name, {'attr': {'placeholder': 'Votre nom.'}}) }}
+        </div>
+        <div class="contact-row">
+            {{ form_label(form.email, 'Email :') }}
+            {{ form_widget(form.email, {'attr': {'placeholder': 'Votre email.'}}) }}
+        </div>
+    </div>
+    <div class="contact-row contact-row-alone">
+        {{ form_label(form.subject, 'Sujet :') }}
+        {{ form_widget(form.subject, {'attr': {'placeholder': 'À propos de'}}) }}
+    </div>
+    <div class="contact-row contact-row-alone">
+        {{ form_widget(form.message, {'attr': {'placeholder': 'Votre message (max 400 caractères)'}}) }}
+    </div>
+    <div class="contact-btn">
+        <button type="submit">Envoyer</button>
+    </div>
+{{ form_end(form) }}
+
+
+<div class="contact-map">
+    <iframe width="100%" height="300px" frameborder="0" allowfullscreen allow="geolocation" src="//umap.openstreetmap.fr/fr/map/carte-sans-nom_944033?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false&captionMenus=true"></iframe><p><a href="//umap.openstreetmap.fr/fr/map/carte-sans-nom_944033?scaleControl=false&miniMap=false&scrollWheelZoom=true&zoomControl=true&allowEdit=false&moreControl=true&searchControl=null&tilelayersControl=null&embedControl=null&datalayersControl=true&onLoadPanel=undefined&captionBar=false&captionMenus=true">Voir en plein écran</a></p>
+</div>
+
+<div class="contact-infosp">
+    <div class="contact-infosp-content">
+        <h2>Siège de l'association</h2>
+        <p>Le Parme D</p>
+        <p>37 avenue des Ecoles</p>
+        <p>06110 Le Cannet</p>
+    </div>
+    <div class="contact-infosp-content">
+        <h2>Adresse de l'école</h2>
+        <p>Sallee Cirque, Collège Rene Cassin</p>
+        <p>528 boulevard Léon Sauvan</p>
+        <p>06690 Tourette-Levens, France</p>
+    </div>
+</div>
+
+<div class="contact-infosp">
+    <div class="contact-infosp-content">
+        <h2>Bus</h2>
+        <p>Ligne 19</p>
+        <p>Départ depuis Nice gare routière</p>
+
+    </div>
+    <div class="contact-infosp-content">
+        <h2>Informations</h2>
+        <a href="">06.74.46.94.27</a>
+        <a href="">tousenpisteatl@gmail.com</a>
+
+    </div>
+</div>
+
+
+{% endblock %}

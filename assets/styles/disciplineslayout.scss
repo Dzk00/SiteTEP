@@ -1,0 +1,126 @@
+@import '_all.scss';
+
+.disci-space{
+    background: transparent;
+    height: 20rem;
+    width: 100%;
+}
+.disci-left-oriented{
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+    height: auto;
+    gap: 50px;
+}
+.disci-right-oriented{
+    display: flex;
+    justify-content: center;
+    padding: 3rem;
+    background: $bg-nav-mobile;
+    gap: 50px;
+    height: auto;
+}
+.disci-text{
+    flex-basis: 0;
+    flex-grow: 0.5;
+}
+.disci-text h2{
+    color: $color-primary-2;
+    font-size: 1.7;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+.disci-text h2::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 50px;
+    height: 2px;
+    width: 60px;
+    background: $color-primary-2;
+    border-radius: 20px;
+}
+.disci-text p{
+    position: relative;
+    font-size: 1.1rem;
+    color: $white;
+    font-weight: 400;
+    letter-spacing: .5px;
+    text-align: justify;
+    padding: 1rem;
+}
+.disci-text p::first-letter{
+    color: $color-primary-2;
+}
+.disci-text p:nth-child(3):after{
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    height: 2px;
+    width: 60px;
+    background: $color-primary-2;
+    border-radius: 20px;
+}
+.disci-img{
+    flex-grow: 0.5;
+    height: 40rem;
+    width: 20rem;
+}
+.disci-img img{
+    object-fit: contain;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+}
+@media screen and (max-width: 1500px) {
+    .disci-img{
+        flex-grow: 0.5;
+        width: 1rem;
+    }
+    .disci-text p:nth-child(3):after{
+        bottom: -10px;
+    }
+    .disci-img img{
+        object-fit: cover;
+    }
+    .disci-text{
+        flex-basis: 0;
+        flex-grow: 0.5;
+    }
+    .decal{
+        object-position: -100px;
+    }
+}
+@media screen and (max-width: 825px) {
+    .disci-left-oriented{
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+    }
+    .disci-right-oriented{
+        flex-direction: column-reverse;
+    }
+    .disci-img{
+        flex-grow: 0.5;
+        width: auto;
+    }
+    .disci-text h2{
+        margin: 1rem;
+    }
+    .disci-text p{
+        padding: 0;
+        margin: 1rem;
+    }
+    .disci-text h2::after{
+        right: 0;
+    }
+    .disci-space{
+        height: 28rem;
+    }
+    .disci-text p:nth-child(3):after{
+        bottom: -75px;
+    }
+}

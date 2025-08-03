@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les actualités de Tous en Piste !{% endblock %}
+
+{% block body %}
+
+{{ include('components/_welcomepage.html.twig') }}
+
+<div class="blog-container">
+{% for blog in blogs %}
+    <div class="blog-content">
+        <div class="blog-content-img">
+            <img src="{{ asset('images/blog/' ~ blog.imagename )}}" alt="">
+        </div>
+        <h2>{{ blog.titrecourt }}</h2>
+        <p>{{ blog.descriptionCourte }}</p>
+        <button><a href="{{ path('app_blog', {'blogid' : blog.id})}}">Lecture<i class="fa-solid fa-arrow-right-long"></i></a></button>
+    </div>
+{% endfor %}
+</div>
+{% endblock %}

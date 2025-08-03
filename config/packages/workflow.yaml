@@ -1,0 +1,39 @@
+# https://symfony.com/doc/current/workflow.html#configuration
+# php bin/console debug:autowiring workflow
+framework:
+    workflows:
+        adherents:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'state'
+            supports:
+                - App\Entity\Adherents
+            initial_marking: created 
+            places:
+                - created
+                - validated
+            transitions:
+                validate:
+                    from: created
+                    to:   validated
+
+        adherentsStateAsEnum:
+            type: 'state_machine'
+            audit_trail:
+                enabled: true
+            marking_store:
+                type: 'method'
+                property: 'stateAsString'
+            supports:
+                - App\Entity\Adherents
+            initial_marking: created
+            places:
+                - created
+                - validated
+            transitions:
+                validate:
+                    from: created
+                    to:   validated

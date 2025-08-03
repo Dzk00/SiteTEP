@@ -1,0 +1,53 @@
+@import '_all.scss';
+
+.nav-menu-mobile{
+    display: none;
+    z-index: 99;
+}
+.nav-menu-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 50px;
+}
+.nav-menu-btn::before{
+    content:'';
+    position: absolute;
+    width: 2rem;
+    height: 0.4rem;
+    background: $white;
+    transform: translateY(-8px);
+    border-radius: 3px;
+    box-shadow: 0 10px 0 $white;
+    transition: .3s ease-in-out;
+}
+.nav-menu-btn::after{
+    content:'';
+    position: absolute;
+    width: 2rem;
+    height: 0.4rem;
+    border-radius: 3px;
+    background: $white;
+    transform: translateY(12px);
+    transition: .3s ease-in-out;
+}
+.nav-menu-btn.activeToggle::before{
+    transform: translateY(0) rotate(585deg);
+    box-shadow: 0 0 0 $white;
+    background: $white;
+}
+.nav-menu-mobile:hover .nav-menu-btn.activeToggle::before{
+    box-shadow: 0 0 0 $white;
+}
+.nav-menu-btn.activeToggle::after{
+    transform: translateY(0) rotate(-585deg);
+    background: $white;
+}
+
+@media screen and (max-width: 1200px) {
+    .nav-menu-mobile{
+        display: inherit;
+    }
+}
+

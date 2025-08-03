@@ -1,0 +1,35 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+filter_by_stage:
+    path: '/admin/filter-by-stage/{stage_id}'
+    controller: 'App\Controller\Admin\AdherentsMonacoCrudController::filterByStage'
+    methods: ['GET']
+
+app_generate_pdf:
+    path: '/admin/generate_pdf'
+    controller: 'App\Controller\Admin\AdherentsMonacoCrudController::generatePdfAction'
+    methods: ['GET']
+
+app_generate_pdf_toussaint:
+    path: '/admin/generate_pdf_toussaint'
+    controller: 'App\Controller\Admin\AdherentsToussaintCrudController::generatePdfAction'
+    methods: ['GET']
+
+app_generate_pdf_fevrier:
+    path: '/admin/generate_pdf_fevrier'
+    controller: 'App\Controller\Admin\AdherentsFevrierCrudController::generatePdfAction'
+    methods: ['GET']
+
+app_generate_pdf_paques:
+    path: '/admin/generate_pdf_paques'
+    controller: 'App\Controller\Admin\AdherentsPaquesCrudController::generatePdfAction'
+    methods: ['GET']
+
+app_generate_pdf_cours:
+    path: '/admin/generate_pdf_cours'
+    controller: 'App\Controller\Admin\AdherentsCoursCrudController::generatePdfAction'
+    methods: ['GET']

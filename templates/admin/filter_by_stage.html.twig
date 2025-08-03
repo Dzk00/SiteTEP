@@ -1,0 +1,47 @@
+{% extends '@EasyAdmin/crud/index.html.twig' %}
+
+{% block main_title %}
+    {{ parent() }}
+    {% if selectedStageId is not null %}
+        - Adhérents inscrits au stage {{ selectedStageId }}
+    {% endif %}
+{% endblock %}
+
+{% block page_actions %}
+    {{ parent() }}
+
+    <div class="dropdown">
+    <button class="btn btn-primary">Filtrer par Stage</button>
+    <div class="dropdown-content">
+        {% for stage in stages %}
+            <a class="dropdown-item" href="{{ path('filter_by_stage', {'stage.id': stage.id}) }}">
+                {{ stage.nom_stage }}
+            </a>
+        {% endfor %}
+    </div>
+</div>
+<a class="btn btn-secondary" href="{{ path('admin') }}">Retour</a>
+{% endblock %}
+
+{% block body %}
+    <table class="table table-bordered table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Email</th>
+                <!-- Ajoutez d'autres colonnes au besoin -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for adherent in adherents %}
+                <tr>
+                    <td>{{ adherent.nom_ad }}</td>
+                    <td>{{ adherent.prenom_ad }}</td>
+                    <td>{{ adherent.mail_ad }}</td>
+                    <!-- Ajoutez d'autres colonnes au besoin -->
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

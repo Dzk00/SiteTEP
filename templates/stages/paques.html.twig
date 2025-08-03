@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello StagsController!{% endblock %}
+
+{% block body %}
+<div class="cours-img">
+        <img src="{{ asset('images/cirque/stages_paques.jpg')}}" alt="">
+</div>
+
+{{ include('components/_stagesnav.html.twig') }}
+
+<div class="stages-container">
+<div class="stages-container-title">
+    <h2>Stages Multidisciplinaires</h2>
+    <p class="center">Pendant les vacances de Pâques 2025, à l'école de cirque Tous en Piste.</p>
+</div>
+<div class="stages-infos">
+    <div class="stages-infos-left">
+        <h3>Infos pratiques</h3>
+        <p>L'inscription est à la semaine, pour <span>5 journées entières</span> ou pour <span>5 demi-journées</span> (matin ou après-midi).</p>
+        <div class="stages-infos-left-prix-1">
+                <p><span>220€</span></p>
+                <p>Journée entière <span>10h-16h30</span></p>
+            </div>
+            <div class="stages-infos-left-prix-bar"></div>
+            <div class="stages-infos-left-prix-2">
+                <p><span>130€</span></p>
+                <p>Demi-journée <span>10h-12h30</span> ou <span>14h-16h30</span></p>
+            </div>
+        <p>A prévoir :</p>
+        <p>Une tenue de sport légère, cheveux longs attachés, les repas pour la journée entière ainsi que les goûters, une bouteille d'eau.</p>
+        <h4>L'inscription sera définitive à reception de votre règlement, non remboursable sauf sur certificat médical.</h4>
+    </div>
+
+    <div class="stages-infos-right">
+        <div class="stages-infos-right-1">
+        <h3>De 4 à 16 ans</h3>
+        <p>Du <span>7</span> avril au <span>11</span> avril</p>
+        </div>
+        <div class="stages-infos-right-2">
+            <h3>NOUVEAU</h3>
+            <p>Option <span>Garderie</p>
+            <p><span>9h-10h</span> et <span>16h30-17h</span></p>
+            <p><span>Gratuit</span></p>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="stages-paiement">
+    <h3>Informations sur le paiement</h3>
+    <p>Règlement possible en <span>espèces</span>, <span>chèques</span> ou <span>virement bancaire</span>.</p>
+    <p>À <span>déposer</span> pendant les horaires de cours de votre enfant à l'école de cirque.</p>
+    <p>Ou à <span>envoyer</span> à Tous en Piste, Les Clos de Mougins, 65 Impasse des Glycines, 06250 Mougins.</p>
+    <h4>IMPORTANT : Mettre le nom de l'enfant au dos du chèque ou sur le virement</h4>
+    <button>RIB Tous en Piste</button>
+</div>
+
+{% for flashError in app.flashes('error') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups..</h2>
+            <p>Un problème est survenu. Veuillez nous contacter.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('succes') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Merci !</h2>
+            <p>Votre inscription à bien été prise en compte. Vous recevrez une confirmation après réception de votre paiement.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('fail') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups...</h2>
+            <p>Vous avez essayer de vous inscrire à un stage complet. Veuillez selectionner un stage avec de la place.</p>
+        </div>
+    </div>
+{% endfor %}
+{% for flashError in app.flashes('mail') %}
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Oups...</h2>
+            <p>Vous avez mal écrit votre adresse mail, veuillez vérifiez.</p>
+        </div>
+    </div>
+{% endfor %}
+
+{{ form_start(form, {'attr': {'class': 'form-container'}}) }}
+    <p>*Champs obligatoires</p>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.nom_ad.vars.id }}">
+            <span>*</span> Nom :
+            </label> 
+            {{ form_widget(form.nom_ad, {'attr': {'placeholder': 'Nom de l\'enfant.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.prenom_ad.vars.id }}">
+            <span>*</span> Prénom :
+            </label>            
+            {{ form_widget(form.prenom_ad, {'attr': {'placeholder': 'Prénom de l\'enfant.'}}) }}
+        </div>
+    </div>
+    <div class="row row-alone">
+        {{ form_label(form.adresse_ad, 'Adresse :') }}
+        {{ form_widget(form.adresse_ad, {'attr': {'placeholder': 'Votre adresse.'}}) }}
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.ville.vars.id }}">
+            <span>*</span> Ville :
+            </label>
+            {{ form_widget(form.ville, {'attr': {'placeholder': 'Votre ville.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.code_postal_ad.vars.id }}">
+            <span>*</span> Code postal :
+            </label>
+            {{ form_widget(form.code_postal_ad, {'attr': {'placeholder': 'Votre code postal.'}}) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.mail_ad.vars.id }}">
+            <span>*</span> Mail :
+            </label>
+            {{ form_widget(form.mail_ad, {'attr': {'placeholder': 'Votre mail.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.date_naissance_ad.vars.id }}">
+            <span>*</span> Date de Naissance :
+            </label>
+            {{ form_widget(form.date_naissance_ad) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            <label for="{{ form.tel_ad.vars.id }}">
+            <span>*</span> Téléphone principal :
+            </label>
+            {{ form_widget(form.tel_ad, {'attr': {'placeholder': 'Téléphone sur lequel vous joindre au quotidien.'}}) }}
+        </div>
+        <div class="row">
+            <label for="{{ form.tel_secours_ad.vars.id }}">
+            <span>*</span> Téléphone de secours :
+            </label>
+            {{ form_widget(form.tel_secours_ad, {'attr': {'placeholder': 'Téléphone pour vous joindre en cas d\'urgence.'}}) }}
+        </div>
+    </div>
+    <div class="row-line">
+        <div class="row">
+            {{ form_label(form.tel_pere_ad, 'Télèphone père (si besoin) :') }}
+            {{ form_widget(form.tel_pere_ad, {'attr': {'placeholder': 'Téléphone du parent.'}}) }}
+        </div>
+        <div class="row">
+            {{ form_label(form.tel_mere_ad, 'Télèphone mère (si besoin) :') }}
+            {{ form_widget(form.tel_mere_ad, {'attr': {'placeholder': 'Téléphone du parent.'}}) }}
+        </div>
+    </div>
+    <div class="row row-alone row-select-2">
+        <label for="{{ form.stage_paques.vars.id }}">
+            <span>*</span> Stage :
+            </label>
+        {{ form_widget(form.stage_paques) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.autorisation_urgence.vars.id }}">
+        <span>*</span> Tous en Piste est autorisé à prendre les mesures nécessaires pour faire transporter le blessé à l'hôpital le plus proche en cas d’impossibilité de joindre le représentant légal, afin que des soins lui soient apportés.
+        </label>
+        {{ form_widget(form.autorisation_urgence) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.vaccins_ad.vars.id }}">
+            <span>*</span> Vaccins à jour :
+        </label>
+        {{ form_widget(form.vaccins_ad) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.antecedents_medicaux_ad.vars.id }}">
+            <span>*</span> Antécédents et recommendations médicaux :
+        </label>
+        {{ form_widget(form.antecedents_medicaux_ad ,{'attr': {'placeholder': 'Merci de fournir toutes les informations nécéssaires pour garantir la sécurité médicale de votre enfant.'}}) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.droit_image_ad.vars.id }}">
+            <span>*</span> Autorisation Droit à l'image du responsable de l'enfant, dans le cadre de l'école de cirque.
+        </label>
+        {{ form_widget(form.droit_image_ad) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.garderie_stage.vars.id }}">
+            Option Garderie, détails plus haut.
+        </label>
+        {{ form_widget(form.garderie_stage) }}
+    </div>
+    <div class="row row-alone">
+        <label for="{{ form.sortie_autonome.vars.id }}">
+            J'autorise mon enfant à partir seul sans accompagnant adulte à la fin de la journée de stage
+        </label>
+        {{ form_widget(form.sortie_autonome) }}
+    </div>
+    <div class="row-btn">
+        <button type="submit">Je réserve ma place</button>
+    </div>
+{{ form_end(form) }}
+
+{% endblock %}
